@@ -14,10 +14,14 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        dark1:'#0F3D3E',
-        dark2:'#F1F1F1',
-        dark3:'#100F0F',
+        light1:'#0F3D3E',
+        light2:'#F1F1F1',
+        light3:'#100F0F',
         blue1:'#7DB9B6',
+        dark1:'#654E92',
+        dark2:'#121212',
+        dark3:'#E8E2E2',
+        blue2:'#B9E0FF',
         gray: {
           900: '#202225',
           800: '#2f3136',
