@@ -1,6 +1,8 @@
 <script setup>
 import { ref , onMounted } from 'vue';
+import {useRouter} from 'vue-router'
 
+let router = useRouter()
 
 let dark = ref(false)
 
@@ -48,25 +50,25 @@ const move = (target) =>  {
 let projects = ref([
     {
     name:'cinema website',
-    disc:'cinema',
+    disc:'website for reviewing movies and series',
     img:'https://images2.imgbox.com/9b/9d/20EgBqnK_o.png',
     link:'https://cinemaweb.netlify.app/',
     },
     {
     name:'epic games clone',
-    disc:'website for buying all kind of stuff',
+    disc:' deep epic games clone',
     img:'https://images2.imgbox.com/4c/3f/CJKGIM7j_o.png',
-    link:'https://epicgamesclonevue.netlify.app/',
+    link:'https://epicgamesclonevue.netlify.app',
     },   
     {
-    name:'shoping cart',
+    name:'shop',
     disc:'website for buying all kind of stuff',
     img:'https://images2.imgbox.com/6c/db/VJ9Lyi9Q_o.png',
-    link:'https://simplestore123.netlify.app/',
+    link:'https://simplestore123.netlify.app',
     },   
     {
         name:'weather app',
-        disc:'weather',
+        disc:' simple weather app',
         img:'https://images2.imgbox.com/0f/19/DSHRuvx8_o.png',
         link:'https://od317.github.io/weather_web_page/'
     }
@@ -74,36 +76,60 @@ let projects = ref([
 
 let icons = ref([
     {
-      src:'../public/svgs/icons8-html-5-48.png'
+      src:'svgs/icons8-html-5-48.png',
+      name:'html',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-javascript-48.png'
+      src:'svgs/icons8-javascript-48.png',
+      name:'javascrip',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-css3-48.png'
+      src:'svgs/icons8-css3-48.png',
+      name:'css',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-vue-js-48.png'
+      src:'svgs/icons8-vue-js-48.png',
+      name:'vue3',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-tailwindcss-48.png'
+      src:'svgs/icons8-tailwindcss-48.png',
+      name:'tailwind',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-bootstrap-48.png'
+      src:'svgs/icons8-bootstrap-48.png',
+      name:'bootstrap',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-git-48.png'
+      src:'svgs/icons8-git-48.png',
+      name:'git',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-node-js-48.png'
+      src:'svgs/icons8-node-js-48.png',
+      name:'nodejs',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-express-js-48.png'
+      src:'svgs/icons8-express-js-48.png',
+      name:'express',
+      show:false
     },
     {
-      src:'../public/svgs/icons8-my-sql-48.png'
+      src:'svgs/icons8-my-sql-48.png',
+      name:'mysql',
+      show:false
     },
 ])
+
+const dark2 = ()=>{
+    dark.value = !dark.value
+}
 
 </script>
 
@@ -112,18 +138,23 @@ let icons = ref([
 <div :class="` ${ dark? 'dark':'' } `">
      <div :class="`bg-light2 dark:bg-dark2 transition-all duration-300 `">
 
-    <div class=" backdrop-blur-sm z-50 h-[10%] text-white  w-full flex items-center gap-[10%] justify-between fixed top-[0]
+    <div class=" backdrop-blur-sm z-50 h-[10%] text-white  w-full flex items-center   fixed top-[0]
                     py-[1rem] 
                     ">
         
-            <div class="flex w-[100%]  md:pl-[0%] items-center justify-center gap-[10%]
+            <div class="flex w-[90%]   md:pl-[10%] items-center justify-center gap-[10%]
                         text-blue1 dark:text-blue2 transition-all duration-300">          
                 <button @click="move('about')">about</button>
                 <button @click="move('projects')">projects</button>
                 <button @click="move('contact')">contact</button>
-                <button @click="dark=!dark">dark</button>
-            </div>
 
+            </div>
+            <div>
+                <div class=" text-center relative " >
+                        <button @click="dark2()" :class="` absolute  text-[120%] cursor-pointer ${dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="!dark"><ion-icon name="sunny"></ion-icon></button>
+                        <button @click="dark2()" :class="` absolute text-dark2  text-[120%] cursor-pointer ${!dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="dark"><ion-icon name="moon"></ion-icon></button>
+                </div>
+            </div>
     </div>
 
 
@@ -139,13 +170,12 @@ let icons = ref([
 
                     <div class="px-[1rem] text-center">
                             <div class=" text-[2rem] pl-[.5rem] text-center">
-                                Hi,im <label class="text-blue1 dark:text-blue2 transition-all duration-300" >osama drbas</label> | Front End developer
+                                Hi,im <label class="text-blue1 dark:text-blue2 transition-all duration-300 capitalize" >osama drbas</label> | Front End developer
                             </div>
 
                             <label class="flex pl-[.5rem] text-[2rem] text-blue1 dark:text-blue2 transition-all duration-300 justify-center items-center gap-[10%] my-[.5rem] " for="">
 
-                                <button class=""><ion-icon name="logo-linkedin"></ion-icon></button>
-                                <button class=""><ion-icon name="logo-github"></ion-icon></button>
+                                <a href="https://github.com/od317" target="plank" class=""><ion-icon name="logo-github"></ion-icon></a>
 
                             </label>
 
@@ -179,9 +209,10 @@ let icons = ref([
 
                 <label class="text-[1.8rem] border-b-4 border-light1 dark:border-dark1 dark:text-white transition-all duration-300 w-fit mb-[1rem] " for="">My skills :</label>
                     
-                <div class="flex flex-wrap gap-[.5rem] w-full ">
-                    <div v-for="m in icons" class=" relative pb-[12%] w-[12%]">
-                      <img  class=" absolute w-full h-full" :src="m.src" alt="">
+                <div class="flex flex-wrap gap-[.5rem] w-full  ">
+                    <div v-for="m in icons" class=" relative pb-[10%] w-[10%] md:pb-[18%] md:w-[18%] lg:pb-[12%] lg:w-[12%]  group">
+                      <img   class=" absolute w-full h-full transition-all duration-300 group-hover:scale-[120%]  cursor-pointer" :src="m.src" alt="">
+                      <div :class="` hidden group-hover:scale-[100%] scale-[0%] absolute w-[150%] translate-x-[-15%] transition-all duration-300  text-[90%] md:flex items-center justify-center text-center h-[70%] bg-light1 text-white dark:bg-dark1  translate-y-[-100%]`">{{ m.name }}</div>
                     </div>
                 <!--
                     <label class="bg-light3 dark:bg-dark3 dark:text-black transition-all duration-300 text-white p-[.5rem] rounded-sm" for="">Html</label>
@@ -224,7 +255,7 @@ let icons = ref([
 
                 <div class="flex flex-col md:flex-row md:flex-wrap gap-[4%] mt-[1rem]">
 
-                <div v-for="p in projects" class="md:w-[46%] mt-[2rem] dark:text-white transition-all duration-300">  
+                <div v-for="p in projects" class="md:w-[47.5%] mt-[2rem] dark:text-white transition-all duration-300">  
                 
                     <label class="text-[1.2rem] " for="">{{p.name}}</label>
 
@@ -232,9 +263,9 @@ let icons = ref([
 
                             <div class="flex flex-col w-full">
         
-                                <div class=" relative pb-[50%] w-full">
+                                <div class=" relative pb-[50%] bg bg-neutral-800 animate-s1  w-full">
             
-                                    <img class="absolute w-full h-full rounded-sm shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]" :src="p.img" alt="">
+                                    <img class="absolute w-full h-full  rounded-sm shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]" :src="p.img" alt="">
 
                                 </div>
 
@@ -245,7 +276,7 @@ let icons = ref([
 
 
                                     <div class="flex flex-row w-fit mt-[.8rem]">
-                                        <a :href="p.link" class="text-light2 bg-light3 dark:bg-dark3 dark:text-black transition-all duration-300 rounded-sm p-[.5rem]" >Visit website</a>
+                                        <a :href="p.link" target="plank" class="text-light2 bg-light3 hover:bg-light1 dark:hover:bg-dark1 dark:hover:text-white dark:bg-dark3 dark:text-black transition-all duration-300 rounded-sm p-[.5rem]" >Visit website</a>
                                     </div>
 
                                 </div>
@@ -274,9 +305,9 @@ let icons = ref([
             
             <div  class="flex flex-col w-full sec h">
                 <label class="text-[1.8rem] border-b-4 border-light1 dark:border-dark1 dark:text-white transition-all duration-300  w-fit mb-[1rem] " for="">Contact Me :</label>
-                <div  class="flex flex-col md:flex-row gap-[4rem]">
+                <div  class="flex flex-col md:flex-row gap-[5%]">
 
-                        <div class=" flex flex-col rounded-sm md:w-[50%] rounded-b-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-300 dark:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
+                        <div class=" flex flex-col rounded-sm mb-[20%] md:w-[50%] md:mb-[0%] rounded-b-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] transition-all duration-300 dark:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ">
 
                             <div class="flex flex-col items-center rounded-t-md  text-light3 dark:text-dark3  transition-all duration-300 justify-center text-[6rem] py-[4rem]">
 
@@ -323,14 +354,14 @@ let icons = ref([
 
             <div class="flex flex-col">
                     <label class="text-[1.4rem]" for="">osama drbas</label>
-                    <label class="mt-[.5rem] w-[50%] text-[.8rem] text-gray-400" for=""> @ 2023, Built   osama drbas</label>
+                    <label class="mt-[.5rem] w-[50%] text-[.8rem] text-gray-400" for=""> @ 2023, Built  by osama drbas</label>
             </div>
 
             <div class="flex flex-col  mt-[1.5rem]">
                 <label class="text-[1.2rem]" for="">Links</label>
                 <div class="flex gap-[5%] flex-row text-[2rem] text-light1 transition-all duration-300 dark:text-dark1">
-                    <button class=""><ion-icon name="logo-linkedin"></ion-icon></button>
-                    <button class=""><ion-icon name="logo-github"></ion-icon></button>
+                    <a href="https://github.com/od317" target="plank" class=""><ion-icon name="logo-github"></ion-icon></a>
+
                 </div>
             </div>
 

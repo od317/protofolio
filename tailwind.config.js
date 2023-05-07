@@ -32,7 +32,22 @@ module.exports = {
           200: '#ebedef',
           100: '#f2f3f5',
         },
-      }
+      },animation: {
+        's1':'s1 3s  linear infinite',
+    },
+      keyframes: {
+      's1':{
+        '0%': {
+          'background':'rgba(38, 38, 38,1)',
+        },
+        '50%': {
+          'background':'rgba(38, 38, 38, .5)',        
+        },
+        '100%': {
+          'background':'rgba(38, 38, 38,1)',        
+        },
+      },
+    },
     },
   },
   plugins: [],
