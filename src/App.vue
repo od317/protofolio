@@ -232,11 +232,10 @@ const dark2 = ()=>{
 
 
             <div class="flex flex-col mt-[1.5rem] md:mt-[0] md:ml-[2rem] md:w-[65%] dark:text-white transition-all duration-300">
-                <label class="text-light1 dark:text-dark1 transition-all duration-300 text-[1.3rem] font-bold " for="">I love dishonoured 2</label>
-                <label for="">recently i have finshed derisndracha with my friend laith(john wick ali rachi) wich is the 
-                    biggest achivment in my life and now we are working on gorod krovi wich will take at leaset 2 months
-                    i hope you pray for me cause im praying some one is hoping for me and this is who iam
-                    have a nice day son
+                <label class="text-light1 dark:text-dark1 transition-all duration-300 text-[1.3rem] font-bold " for="">I love web development</label>
+                <label for="">
+                    I like to build websites and make them responsive to all screens. I also always like to get out of my comfort zone to learn new things and solve difficult problems.Infact, I have solved more than 150 problems on leetcode., and I will always strive to develop myself and learn new things.
+
                 </label>
             </div>
 
