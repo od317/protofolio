@@ -151,8 +151,8 @@ const dark2 = ()=>{
             </div>
             <div>
                 <div class=" text-center relative " >
-                        <button @click="dark2()" :class="` absolute  text-[120%] cursor-pointer ${dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="!dark"><ion-icon name="sunny"></ion-icon></button>
-                        <button @click="dark2()" :class="` absolute text-dark2  text-[120%] cursor-pointer ${!dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="dark"><ion-icon name="moon"></ion-icon></button>
+                        <button @click="dark2()" :class="` translate-y-[-50%] absolute  text-[120%] cursor-pointer ${dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="!dark"><ion-icon name="sunny"></ion-icon></button>
+                        <button @click="dark2()" :class="` translate-y-[-50%] absolute text-dark2  text-[120%] cursor-pointer ${!dark ? ' opacity-[100%] z-[20]':' opacity-[0%] z-[10] '} transition-all duration-300 `" :disabled="dark"><ion-icon name="moon"></ion-icon></button>
                 </div>
             </div>
     </div>
