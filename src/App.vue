@@ -385,26 +385,22 @@ const dark2 = ()=>{
 .h{
     opacity: 0;
     transform: translateX(-100%);
-    filter: blur(5px);
     transition: all 1s;
 }
 
 .show{
     opacity: 100;
     transform: translateX(0%);
-    filter: blur(0);
 }
 
 
 .h1{
     opacity: 0;
-    filter: blur(5px);
     transition: all 1s;
 }
 
 .s2{
     opacity: 100;
-    filter: blur(0);
 }
 
 
