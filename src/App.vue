@@ -232,7 +232,7 @@ const dark2 = ()=>{
 
 
             <div class="flex flex-col mt-[1.5rem] md:mt-[0] md:ml-[2rem] md:w-[65%] dark:text-white transition-all duration-300">
-                <label class="text-light1 dark:text-dark1 transition-all duration-300 text-[1.3rem] font-bold " for="">I love web development</label>
+                <label class="text-light1 dark:text-dark1 transition-all duration-300 text-[1.3rem] font-bold capitalize" for="">I love web development</label>
                 <label for="">
                     I like to build websites and make them responsive to all screens. I also always like to get out of my comfort zone to learn new things and solve difficult problems.Infact, I have solved more than 150 problems on leetcode., and I will always strive to develop myself and learn new things.
 
@@ -256,7 +256,7 @@ const dark2 = ()=>{
 
                 <div v-for="p in projects" class="md:w-[47.5%] mt-[2rem] dark:text-white transition-all duration-300">  
                 
-                    <label class="text-[1.2rem] " for="">{{p.name}}</label>
+                    <label class="text-[1.2rem]  capitalize" for="">{{p.name}}</label>
 
                         <div class="flex flex-col mt-[1.5rem] w-full">
 
@@ -352,7 +352,7 @@ const dark2 = ()=>{
         <section class="w-full p-[1.5rem] bg-light3 text-light2 flex flex-col md:flex-row px-[10%]  transition-all duration-300 dark:text-white">
 
             <div class="flex flex-col">
-                    <label class="text-[1.4rem]" for="">osama drbas</label>
+                    <label class="text-[1.4rem] capitalize" for="">osama drbas</label>
                     <label class="mt-[.5rem] w-[50%] text-[.8rem] text-gray-400" for=""> @ 2023, Built  by osama drbas</label>
             </div>
 
